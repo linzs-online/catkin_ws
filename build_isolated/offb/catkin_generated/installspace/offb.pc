@@ -1,0 +1,8 @@
+prefix=/home/physics/catkin_ws/install_isolated
+
+Name: offb
+Description: Description of offb
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/physics/catkin_ws/install_isolated/lib 
+Requires: 

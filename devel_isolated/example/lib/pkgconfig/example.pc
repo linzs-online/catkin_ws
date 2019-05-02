@@ -1,0 +1,8 @@
+prefix=/home/physics/catkin_ws/devel_isolated/example
+
+Name: example
+Description: Description of example
+Version: 0.0.0
+Cflags: -I/home/physics/catkin_ws/devel_isolated/example/include
+Libs: -L/home/physics/catkin_ws/devel_isolated/example/lib 
+Requires: message_runtime

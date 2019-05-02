@@ -1,0 +1,20 @@
+# ninja log v5
+0	2962	0	CMakeFiles/robot_pose_publisher.dir/src/robot_pose_publisher.cpp.o	41ecc8a4a1c72360
+2962	3102	0	/home/physics/catkin_ws/devel_isolated/robot_pose_publisher/lib/robot_pose_publisher/robot_pose_publisher	de30038d2379eb58
+1	14	0	CMakeFiles/install.util	f0ac058ac3e86d23
+1	10	0	CMakeFiles/install.util	f0ac058ac3e86d23
+1	10	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	10	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	12	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	12	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	11	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	10	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	11	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	13	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	11	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	12	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	12	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	16	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	10	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	12	0	CMakeFiles/install.util	f0ac058ac3e86d23
+0	11	0	CMakeFiles/install.util	f0ac058ac3e86d23

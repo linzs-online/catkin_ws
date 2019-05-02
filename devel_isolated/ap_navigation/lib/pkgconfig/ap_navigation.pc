@@ -1,0 +1,8 @@
+prefix=/home/physics/catkin_ws/devel_isolated/ap_navigation
+
+Name: ap_navigation
+Description: Description of ap_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/physics/catkin_ws/devel_isolated/ap_navigation/lib 
+Requires: 

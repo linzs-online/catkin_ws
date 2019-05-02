@@ -1,0 +1,501 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_bfddb"
+[1/2] Building C object CMakeFiles/cmTC_bfddb.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_bfddb
+FAILED: : && /usr/bin/cc     CMakeFiles/cmTC_bfddb.dir/CheckSymbolExists.c.o  -o cmTC_bfddb  -rdynamic && :
+CMakeFiles/cmTC_bfddb.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x16)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+File /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_6758e"
+[1/2] Building C object CMakeFiles/cmTC_6758e.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_6758e
+FAILED: : && /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create   CMakeFiles/cmTC_6758e.dir/CheckFunctionExists.c.o  -o cmTC_6758e  -rdynamic -lpthreads && :
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Determining if the include file unordered_map exists failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_b59e7"
+[1/2] Building CXX object CMakeFiles/cmTC_b59e7.dir/CheckIncludeFile.cxx.o
+FAILED: /usr/bin/c++     -fopenmp  -fopenmp -o CMakeFiles/cmTC_b59e7.dir/CheckIncludeFile.cxx.o -c CheckIncludeFile.cxx
+In file included from /usr/include/c++/5/unordered_map:35:0,
+                 from CheckIncludeFile.cxx:1:
+/usr/include/c++/5/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support \
+  ^
+ninja: build stopped: subcommand failed.
+
+
+Performing C++ SOURCE FILE Test HAVE_SHARED_PTR_IN_STD_NAMESPACE failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_7f31d"
+[1/2] Building CXX object CMakeFiles/cmTC_7f31d.dir/src.cxx.o
+FAILED: /usr/bin/c++     -fopenmp -DHAVE_SHARED_PTR_IN_STD_NAMESPACE  -fopenmp -o CMakeFiles/cmTC_7f31d.dir/src.cxx.o -c src.cxx
+src.cxx: In function ‘int main()’:
+src.cxx:3:34: error: ‘shared_ptr’ is not a member of ‘std’
+                                  std::shared_ptr<int> int_ptr;
+                                  ^
+src.cxx:3:50: error: expected primary-expression before ‘int’
+                                  std::shared_ptr<int> int_ptr;
+                                                  ^
+ninja: build stopped: subcommand failed.
+
+Source file was:
+#include <memory>
+                               int main() {
+                                 std::shared_ptr<int> int_ptr;
+                                 return 0;
+                               }
+Performing C++ SOURCE FILE Test HAVE_SHARED_PTR_IN_TR1_NAMESPACE failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_45eec"
+[1/2] Building CXX object CMakeFiles/cmTC_45eec.dir/src.cxx.o
+FAILED: /usr/bin/c++     -fopenmp -DHAVE_SHARED_PTR_IN_TR1_NAMESPACE  -fopenmp -o CMakeFiles/cmTC_45eec.dir/src.cxx.o -c src.cxx
+src.cxx: In function ‘int main()’:
+src.cxx:3:41: error: ‘std::tr1’ has not been declared
+                                    std::tr1::shared_ptr<int> int_ptr;
+                                         ^
+src.cxx:3:57: error: expected primary-expression before ‘int’
+                                    std::tr1::shared_ptr<int> int_ptr;
+                                                         ^
+ninja: build stopped: subcommand failed.
+
+Source file was:
+#include <memory>
+                                 int main() {
+                                   std::tr1::shared_ptr<int> int_ptr;
+                                   return 0;
+                                 }
+Performing C++ SOURCE FILE Test CXX11_MATH_FUNCTIONS_FOUND failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_00b52"
+[1/2] Building CXX object CMakeFiles/cmTC_00b52.dir/src.cxx.o
+FAILED: /usr/bin/c++     -fopenmp -DCXX11_MATH_FUNCTIONS_FOUND  -fopenmp -o CMakeFiles/cmTC_00b52.dir/src.cxx.o -c src.cxx
+src.cxx:3:37: error: ‘constexpr’ does not name a type
+                              static constexpr size_t kMaxAlignBytes = alignof(std::max_align_t);
+                                     ^
+src.cxx:3:37: note: C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+src.cxx: In function ‘int main()’:
+src.cxx:5:33: error: ‘cbrt’ is not a member of ‘std’
+                                 std::cbrt(1.0);
+                                 ^
+src.cxx:5:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:169:1: note:   ‘cbrt’
+ __MATHCALL (cbrt,, (_Mdouble_ __x));
+ ^
+src.cxx:6:33: error: ‘exp2’ is not a member of ‘std’
+                                 std::exp2(1.0);
+                                 ^
+src.cxx:6:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:141:1: note:   ‘exp2’
+ __MATHCALL (exp2,, (_Mdouble_ __x));
+ ^
+src.cxx:7:33: error: ‘log2’ is not a member of ‘std’
+                                 std::log2(1.0);
+                                 ^
+src.cxx:7:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:144:1: note:   ‘log2’
+ __MATHCALL (log2,, (_Mdouble_ __x));
+ ^
+src.cxx:8:33: error: ‘hypot’ is not a member of ‘std’
+                                 std::hypot(1.0, 1.0);
+                                 ^
+src.cxx:8:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:162:1: note:   ‘hypot’
+ __MATHCALL (hypot,, (_Mdouble_ __x, _Mdouble_ __y));
+ ^
+src.cxx:9:33: error: ‘fmax’ is not a member of ‘std’
+                                 std::fmax(1.0, 1.0);
+                                 ^
+src.cxx:9:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:350:1: note:   ‘fmax’
+ __MATHCALLX (fmax,, (_Mdouble_ __x, _Mdouble_ __y), (__const__));
+ ^
+src.cxx:10:33: error: ‘fmin’ is not a member of ‘std’
+                                 std::fmin(1.0, 1.0);
+                                 ^
+src.cxx:10:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:353:1: note:   ‘fmin’
+ __MATHCALLX (fmin,, (_Mdouble_ __x, _Mdouble_ __y), (__const__));
+ ^
+ninja: build stopped: subcommand failed.
+
+Source file was:
+#include <cmath>
+                             #include <cstddef>
+                             static constexpr size_t kMaxAlignBytes = alignof(std::max_align_t);
+                             int main() {
+                                std::cbrt(1.0);
+                                std::exp2(1.0);
+                                std::log2(1.0);
+                                std::hypot(1.0, 1.0);
+                                std::fmax(1.0, 1.0);
+                                std::fmin(1.0, 1.0);
+                                return 0;
+                             }
+Determining if the include file unordered_map exists failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_e882f"
+[1/2] Building CXX object CMakeFiles/cmTC_e882f.dir/CheckIncludeFile.cxx.o
+FAILED: /usr/bin/c++     -fopenmp  -fopenmp -o CMakeFiles/cmTC_e882f.dir/CheckIncludeFile.cxx.o -c CheckIncludeFile.cxx
+In file included from /usr/include/c++/5/unordered_map:35:0,
+                 from CheckIncludeFile.cxx:1:
+/usr/include/c++/5/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support \
+  ^
+ninja: build stopped: subcommand failed.
+
+
+Performing C++ SOURCE FILE Test HAVE_SHARED_PTR_IN_STD_NAMESPACE failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_cf3ee"
+[1/2] Building CXX object CMakeFiles/cmTC_cf3ee.dir/src.cxx.o
+FAILED: /usr/bin/c++     -fopenmp -DHAVE_SHARED_PTR_IN_STD_NAMESPACE  -fopenmp -o CMakeFiles/cmTC_cf3ee.dir/src.cxx.o -c src.cxx
+src.cxx: In function ‘int main()’:
+src.cxx:3:34: error: ‘shared_ptr’ is not a member of ‘std’
+                                  std::shared_ptr<int> int_ptr;
+                                  ^
+src.cxx:3:50: error: expected primary-expression before ‘int’
+                                  std::shared_ptr<int> int_ptr;
+                                                  ^
+ninja: build stopped: subcommand failed.
+
+Source file was:
+#include <memory>
+                               int main() {
+                                 std::shared_ptr<int> int_ptr;
+                                 return 0;
+                               }
+Performing C++ SOURCE FILE Test HAVE_SHARED_PTR_IN_TR1_NAMESPACE failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_08119"
+[1/2] Building CXX object CMakeFiles/cmTC_08119.dir/src.cxx.o
+FAILED: /usr/bin/c++     -fopenmp -DHAVE_SHARED_PTR_IN_TR1_NAMESPACE  -fopenmp -o CMakeFiles/cmTC_08119.dir/src.cxx.o -c src.cxx
+src.cxx: In function ‘int main()’:
+src.cxx:3:41: error: ‘std::tr1’ has not been declared
+                                    std::tr1::shared_ptr<int> int_ptr;
+                                         ^
+src.cxx:3:57: error: expected primary-expression before ‘int’
+                                    std::tr1::shared_ptr<int> int_ptr;
+                                                         ^
+ninja: build stopped: subcommand failed.
+
+Source file was:
+#include <memory>
+                                 int main() {
+                                   std::tr1::shared_ptr<int> int_ptr;
+                                   return 0;
+                                 }
+Performing C++ SOURCE FILE Test CXX11_MATH_FUNCTIONS_FOUND failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_bf6f9"
+[1/2] Building CXX object CMakeFiles/cmTC_bf6f9.dir/src.cxx.o
+FAILED: /usr/bin/c++     -fopenmp -DCXX11_MATH_FUNCTIONS_FOUND  -fopenmp -o CMakeFiles/cmTC_bf6f9.dir/src.cxx.o -c src.cxx
+src.cxx:3:37: error: ‘constexpr’ does not name a type
+                              static constexpr size_t kMaxAlignBytes = alignof(std::max_align_t);
+                                     ^
+src.cxx:3:37: note: C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+src.cxx: In function ‘int main()’:
+src.cxx:5:33: error: ‘cbrt’ is not a member of ‘std’
+                                 std::cbrt(1.0);
+                                 ^
+src.cxx:5:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:169:1: note:   ‘cbrt’
+ __MATHCALL (cbrt,, (_Mdouble_ __x));
+ ^
+src.cxx:6:33: error: ‘exp2’ is not a member of ‘std’
+                                 std::exp2(1.0);
+                                 ^
+src.cxx:6:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:141:1: note:   ‘exp2’
+ __MATHCALL (exp2,, (_Mdouble_ __x));
+ ^
+src.cxx:7:33: error: ‘log2’ is not a member of ‘std’
+                                 std::log2(1.0);
+                                 ^
+src.cxx:7:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:144:1: note:   ‘log2’
+ __MATHCALL (log2,, (_Mdouble_ __x));
+ ^
+src.cxx:8:33: error: ‘hypot’ is not a member of ‘std’
+                                 std::hypot(1.0, 1.0);
+                                 ^
+src.cxx:8:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:162:1: note:   ‘hypot’
+ __MATHCALL (hypot,, (_Mdouble_ __x, _Mdouble_ __y));
+ ^
+src.cxx:9:33: error: ‘fmax’ is not a member of ‘std’
+                                 std::fmax(1.0, 1.0);
+                                 ^
+src.cxx:9:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:350:1: note:   ‘fmax’
+ __MATHCALLX (fmax,, (_Mdouble_ __x, _Mdouble_ __y), (__const__));
+ ^
+src.cxx:10:33: error: ‘fmin’ is not a member of ‘std’
+                                 std::fmin(1.0, 1.0);
+                                 ^
+src.cxx:10:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:353:1: note:   ‘fmin’
+ __MATHCALLX (fmin,, (_Mdouble_ __x, _Mdouble_ __y), (__const__));
+ ^
+ninja: build stopped: subcommand failed.
+
+Source file was:
+#include <cmath>
+                             #include <cstddef>
+                             static constexpr size_t kMaxAlignBytes = alignof(std::max_align_t);
+                             int main() {
+                                std::cbrt(1.0);
+                                std::exp2(1.0);
+                                std::log2(1.0);
+                                std::hypot(1.0, 1.0);
+                                std::fmax(1.0, 1.0);
+                                std::fmin(1.0, 1.0);
+                                return 0;
+                             }
+Determining if the include file unordered_map exists failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_e6082"
+[1/2] Building CXX object CMakeFiles/cmTC_e6082.dir/CheckIncludeFile.cxx.o
+FAILED: /usr/bin/c++     -fopenmp  -fopenmp -o CMakeFiles/cmTC_e6082.dir/CheckIncludeFile.cxx.o -c CheckIncludeFile.cxx
+In file included from /usr/include/c++/5/unordered_map:35:0,
+                 from CheckIncludeFile.cxx:1:
+/usr/include/c++/5/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support \
+  ^
+ninja: build stopped: subcommand failed.
+
+
+Performing C++ SOURCE FILE Test HAVE_SHARED_PTR_IN_STD_NAMESPACE failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_b9af4"
+[1/2] Building CXX object CMakeFiles/cmTC_b9af4.dir/src.cxx.o
+FAILED: /usr/bin/c++     -fopenmp -DHAVE_SHARED_PTR_IN_STD_NAMESPACE  -fopenmp -o CMakeFiles/cmTC_b9af4.dir/src.cxx.o -c src.cxx
+src.cxx: In function ‘int main()’:
+src.cxx:3:34: error: ‘shared_ptr’ is not a member of ‘std’
+                                  std::shared_ptr<int> int_ptr;
+                                  ^
+src.cxx:3:50: error: expected primary-expression before ‘int’
+                                  std::shared_ptr<int> int_ptr;
+                                                  ^
+ninja: build stopped: subcommand failed.
+
+Source file was:
+#include <memory>
+                               int main() {
+                                 std::shared_ptr<int> int_ptr;
+                                 return 0;
+                               }
+Performing C++ SOURCE FILE Test HAVE_SHARED_PTR_IN_TR1_NAMESPACE failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_b82cb"
+[1/2] Building CXX object CMakeFiles/cmTC_b82cb.dir/src.cxx.o
+FAILED: /usr/bin/c++     -fopenmp -DHAVE_SHARED_PTR_IN_TR1_NAMESPACE  -fopenmp -o CMakeFiles/cmTC_b82cb.dir/src.cxx.o -c src.cxx
+src.cxx: In function ‘int main()’:
+src.cxx:3:41: error: ‘std::tr1’ has not been declared
+                                    std::tr1::shared_ptr<int> int_ptr;
+                                         ^
+src.cxx:3:57: error: expected primary-expression before ‘int’
+                                    std::tr1::shared_ptr<int> int_ptr;
+                                                         ^
+ninja: build stopped: subcommand failed.
+
+Source file was:
+#include <memory>
+                                 int main() {
+                                   std::tr1::shared_ptr<int> int_ptr;
+                                   return 0;
+                                 }
+Performing C++ SOURCE FILE Test CXX11_MATH_FUNCTIONS_FOUND failed with the following output:
+Change Dir: /home/physics/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_d81fd"
+[1/2] Building CXX object CMakeFiles/cmTC_d81fd.dir/src.cxx.o
+FAILED: /usr/bin/c++     -fopenmp -DCXX11_MATH_FUNCTIONS_FOUND  -fopenmp -o CMakeFiles/cmTC_d81fd.dir/src.cxx.o -c src.cxx
+src.cxx:3:37: error: ‘constexpr’ does not name a type
+                              static constexpr size_t kMaxAlignBytes = alignof(std::max_align_t);
+                                     ^
+src.cxx:3:37: note: C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+src.cxx: In function ‘int main()’:
+src.cxx:5:33: error: ‘cbrt’ is not a member of ‘std’
+                                 std::cbrt(1.0);
+                                 ^
+src.cxx:5:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:169:1: note:   ‘cbrt’
+ __MATHCALL (cbrt,, (_Mdouble_ __x));
+ ^
+src.cxx:6:33: error: ‘exp2’ is not a member of ‘std’
+                                 std::exp2(1.0);
+                                 ^
+src.cxx:6:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:141:1: note:   ‘exp2’
+ __MATHCALL (exp2,, (_Mdouble_ __x));
+ ^
+src.cxx:7:33: error: ‘log2’ is not a member of ‘std’
+                                 std::log2(1.0);
+                                 ^
+src.cxx:7:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:144:1: note:   ‘log2’
+ __MATHCALL (log2,, (_Mdouble_ __x));
+ ^
+src.cxx:8:33: error: ‘hypot’ is not a member of ‘std’
+                                 std::hypot(1.0, 1.0);
+                                 ^
+src.cxx:8:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:162:1: note:   ‘hypot’
+ __MATHCALL (hypot,, (_Mdouble_ __x, _Mdouble_ __y));
+ ^
+src.cxx:9:33: error: ‘fmax’ is not a member of ‘std’
+                                 std::fmax(1.0, 1.0);
+                                 ^
+src.cxx:9:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:350:1: note:   ‘fmax’
+ __MATHCALLX (fmax,, (_Mdouble_ __x, _Mdouble_ __y), (__const__));
+ ^
+src.cxx:10:33: error: ‘fmin’ is not a member of ‘std’
+                                 std::fmin(1.0, 1.0);
+                                 ^
+src.cxx:10:33: note: suggested alternative:
+In file included from /usr/include/features.h:367:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:482,
+                 from /usr/include/c++/5/cmath:41,
+                 from src.cxx:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:353:1: note:   ‘fmin’
+ __MATHCALLX (fmin,, (_Mdouble_ __x, _Mdouble_ __y), (__const__));
+ ^
+ninja: build stopped: subcommand failed.
+
+Source file was:
+#include <cmath>
+                             #include <cstddef>
+                             static constexpr size_t kMaxAlignBytes = alignof(std::max_align_t);
+                             int main() {
+                                std::cbrt(1.0);
+                                std::exp2(1.0);
+                                std::log2(1.0);
+                                std::hypot(1.0, 1.0);
+                                std::fmax(1.0, 1.0);
+                                std::fmin(1.0, 1.0);
+                                return 0;
+                             }

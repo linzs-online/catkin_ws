@@ -1,0 +1,8 @@
+prefix=/home/physics/catkin_ws/install_isolated
+exec_prefix=/home/physics/catkin_ws/install_isolated
+includedir=${prefix}/include
+
+Name: mavlink
+Description: MAVLink micro air vehicle marshalling / communication library
+Version: 2019.3.3
+Cflags: -I${includedir}

@@ -1,0 +1,8 @@
+prefix=/home/physics/catkin_ws/install_isolated
+
+Name: rotate_recovery
+Description: Description of rotate_recovery
+Version: 1.16.2
+Cflags: -I/home/physics/catkin_ws/install_isolated/include
+Libs: -L/home/physics/catkin_ws/install_isolated/lib -lrotate_recovery
+Requires: costmap_2d geometry_msgs nav_core pluginlib roscpp tf2 tf2_ros

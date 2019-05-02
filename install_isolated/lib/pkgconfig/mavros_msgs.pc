@@ -1,0 +1,8 @@
+prefix=/home/physics/catkin_ws/install_isolated
+
+Name: mavros_msgs
+Description: Description of mavros_msgs
+Version: 0.29.2
+Cflags: -I/home/physics/catkin_ws/install_isolated/include
+Libs: -L/home/physics/catkin_ws/install_isolated/lib 
+Requires: geographic_msgs geometry_msgs message_runtime sensor_msgs std_msgs

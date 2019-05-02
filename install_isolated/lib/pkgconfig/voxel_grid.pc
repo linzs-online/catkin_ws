@@ -1,0 +1,8 @@
+prefix=/home/physics/catkin_ws/install_isolated
+
+Name: voxel_grid
+Description: Description of voxel_grid
+Version: 1.16.2
+Cflags: -I/home/physics/catkin_ws/install_isolated/include
+Libs: -L/home/physics/catkin_ws/install_isolated/lib -lvoxel_grid
+Requires: roscpp

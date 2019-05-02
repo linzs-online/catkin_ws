@@ -1,0 +1,12 @@
+/home/physics/catkin_ws/install_isolated/_setup_util.py
+/home/physics/catkin_ws/install_isolated/env.sh
+/home/physics/catkin_ws/install_isolated/setup.bash
+/home/physics/catkin_ws/install_isolated/setup.sh
+/home/physics/catkin_ws/install_isolated/setup.zsh
+/home/physics/catkin_ws/install_isolated/.rosinstall
+/home/physics/catkin_ws/install_isolated/lib/pkgconfig/fake_localization.pc
+/home/physics/catkin_ws/install_isolated/share/fake_localization/cmake/fake_localizationConfig.cmake
+/home/physics/catkin_ws/install_isolated/share/fake_localization/cmake/fake_localizationConfig-version.cmake
+/home/physics/catkin_ws/install_isolated/share/fake_localization/package.xml
+/home/physics/catkin_ws/install_isolated/lib/fake_localization/static_odom_broadcaster.py
+/home/physics/catkin_ws/install_isolated/lib/fake_localization/fake_localization
